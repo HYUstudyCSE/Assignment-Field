@@ -1,0 +1,153 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    z-index: 1;
+}
+body{
+    font-family: "Dongle", sans-serif;
+    background-color: white;
+}
+
+header{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding:0px;
+    margin: 0px;
+    position: sticky;
+    top: 0px;
+    height: 70px;
+    z-index: 10;
+}
+main{
+    padding:0px;
+    margin: 0px;
+    width:100%;
+}
+footer{
+    background-color: white;
+    font-size: 30px;
+    text-align: center;
+    height: 150px;
+}
+footer > div{
+    height: 200px;
+}
+
+div{
+    width:100%;
+}
+
+#content0{
+    width: 100%;
+    height: 880px;
+    background-image: url(../img/sakura.jpg);
+    background-size: cover;
+}
+
+#content0 h1{
+    font-family: "Nanum Pen Script", cursive;
+    font-style: italic;
+    font-weight: lighter;
+    font-size:150px;
+    text-align: right;
+    margin-right: 5%;
+    padding-block-start: 3.5em;
+}
+
+#content1{
+    position: relative;
+    height: 1000px;
+}
+
+#content1 .leftbox{
+    font-size: 50px;
+    position: absolute;
+    width: 40%;
+    top: 30%;
+    left: 20%;
+}
+#content1 .rightbox{
+    position: absolute;
+    top: 30%;
+    right: 20%;
+}
+
+#content2{
+    text-align: center;
+    height: 800px;
+}
+
+#content2 h1{
+    margin-block-start: 3em;
+    font-size: 80px;
+}
+
+#content2 p{
+    font-size: 30px;
+}
+
+#content2 li{
+    display: inline-block;
+}
+
+#content2 li img{
+    width: 100px;
+    height: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+header *{
+    display: inline;
+}
+header li{
+    font-size: 50px;
+}
+header a{
+    color:rgb(255, 192, 203);
+    text-decoration-line: none;
+}
+header ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+.leftbox{
+    float: left;
+    width:800px; 
+    height:100px; 
+}
+
+.rightbox {
+    display:inline-block; 
+    text-align: right;
+    width:200px; 
+    height:100px; 
+    margin-left:30px;
+}
+
+#content3{
+    height: 1000px;
+}
+
+footer li{
+    display: inline;
+}
+footer ul{
+    display: flex;
+    justify-content: space-around;
+}
+#content3 img{
+    width: 800px; 
+}
+#content3 .leftbox{
+    margin-left: 10%;
+}
+#content3 h1{
+    text-align: center;
+    font-size: 80px;
+    margin-bottom: 60px;
+}
+#content3 p{
+    font-size: 40px;
+}
