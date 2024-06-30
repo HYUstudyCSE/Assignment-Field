@@ -1,0 +1,204 @@
+@font-face {
+    font-family: billabong;
+    src: url("fonts/Billabong.otf");
+}
+@font-face {
+    font-family: nanum;
+    src: url("fonts/NanumPenScript-Regular.ttf");
+}
+
+header {
+    padding: 10px 0px 0px 0px;
+    height: 60px;
+    position: sticky;
+    top: 0px;
+}
+
+#H-inner {
+    padding: 0px 50px 0px 50px;
+}
+
+#logo {
+    font-family: billabong;
+    font-size: 200%;
+    width: 125px;
+}
+
+nav {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: end;
+    justify-content: space-between;
+    margin: -40px 0px 0px 1800px;
+    display: flex;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+nav a:hover {
+    transform: translateY(-4px);
+    transition: 0.5s;
+}
+
+#about {
+    padding: 100px 0px;
+    background-size: cover;
+}
+
+#introduction h1 {
+    font-size: 40px;
+    padding: 100px;
+    text-align: center;
+}
+
+#contain p {
+    margin: auto;
+    width: 1200px;
+    font-size: 15px;
+    text-align: left;
+}
+
+#aboutme {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 35px;
+    width: 300px;
+    height: 100px;
+}
+
+#aboutcontainer {
+    height: 800px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
+#profilecard {
+    height: 500px;
+    margin: 70px 800px;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, .25);
+    padding: 20px 0px;
+}
+
+#image {
+    width: 300px;
+    height: 300px;
+}
+
+#image img{
+    width: 300px;
+    height: 300px;
+}
+
+#profilecard ul {
+    width: 500px;
+    margin: 20px 0px 0px 50px;
+}
+
+#list {
+    width: 500px;
+}
+
+#profilecard li {
+    margin: 10px 0px;
+    list-style-type: square;
+    font-family: nanum;
+    font-size: 30px;
+}
+
+#profileinner {
+    display: flex;
+}
+
+.top {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 35px;
+    font-weight: normal;
+    margin-top: 0px;
+    padding-top: 30px;
+}
+
+.img {
+    text-align: center;
+    height: 220px;
+}
+
+#skills {
+    background-color: #e7e6e6;
+}
+
+#skills img {
+    width: 120px;
+    height: 120px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .2), 0 3px 6px rgba(0, 0, 0, .2);
+    border-radius: 30px 30px;
+    margin: 80px 50px;
+}
+
+#first {
+    text-align: center;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 500px;
+    margin: 0px 300px 0px 970px;
+    font-family: 'Franklin Gothic Medium';
+    font-size: 20px;
+}
+
+#second {
+    margin: 0px;
+    padding-bottom: 20px;
+}
+
+#second li{
+    text-align: center;
+    list-style-type: none;
+    display: inline;
+    font-family: 'Franklin Gothic Medium';
+    font-size: 20px;
+}
+
+#a {
+    margin: 0px 0px 0px 975px;
+}
+
+#b {
+    margin: 0px 0px 0px 180px;
+}
+#c {
+    margin: 0px 0px 0px 155px;
+}
+
+#projects {
+    background-color: #6cdab2;
+}
+
+#projectcontent {
+    height: 1000px;
+}
+
+#email {
+    text-align: center;
+    font-size: 30px;
+    margin: 70px 0px 0px 0px;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#contact {
+    text-align: center;
+    background-color: #7882a4;
+}
+
+#contact img{
+    width: 100px;
+    height: 100px;
+    margin: 20px 0px 20px 0px;
+}
