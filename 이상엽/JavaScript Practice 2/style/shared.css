@@ -1,0 +1,18 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  color: black;
+}
+
+body {
+  background-color: white;
+}
+
+input {
+  width: 200px;
+  color: gray;
+}
+
+button {
+  color: black;
+}
