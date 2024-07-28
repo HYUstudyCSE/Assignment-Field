@@ -1,0 +1,11 @@
+.RandomPokemon {
+    border:1px solid black;
+}
+
+.RandomPokemon h1{
+    color: blue;
+}
+
+.PropertyList {
+    display: flex;
+}
