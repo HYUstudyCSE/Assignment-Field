@@ -22,6 +22,7 @@ function App() {
     <div className='app'>
       {pos==='home' ? <Home sendData={sendData}/> : null}
       {pos==='lobby' ? <Lobby name={name} isAdmin={isAdmin} remotePeerId={remotePeerId}/> : null}
+      {pos==='Game' ? <h1>Game Part</h1> : null}
     </div>
   )
 }
