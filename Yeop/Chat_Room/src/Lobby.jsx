@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Peer from "peerjs";
 
-function Lobby({name, isAdmin, remotePeerId}){
+function Lobby({name, isAdmin, remotePeerId, sendData}){
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
     const [peerId, setPeerId] = useState('');
@@ -11,6 +11,7 @@ function Lobby({name, isAdmin, remotePeerId}){
     const adminIns = useRef(null);
     
     const playersData = useRef([{conn: null, name: name, isAdmin: true}]);
+    const [allReady, setAllReady] = useState(false);
   
     useEffect(() => {
         console.log({name: name, isAdmin: isAdmin, remotePeerId: remotePeerId});
@@ -45,6 +46,17 @@ function Lobby({name, isAdmin, remotePeerId}){
                     case 'ready':
                         playersData.current = playersData.current.map(e => ({...e, isReady: e.name===data.sender ? !e.isReady : e.isReady}));
                         sendAll({type: 'playerData',data: playersData.current.map(e => ({...e, conn: null}))});
+                        
+                        let temp = true;
+
+                        for(const player of playersData.current){
+                            if(!player.isAdmin && !player.isReady){
+                                temp = false;
+                                break;
+                            }
+                        }
+
+                        setAllReady(temp);
                         break;
                 }
 
@@ -58,6 +70,7 @@ function Lobby({name, isAdmin, remotePeerId}){
     }, []);
   
     const sendAll = (data) => {
+        console.log('sendAll act');
         console.log(data);
         if(!isAdmin) return;
         for(const player of playersData.current){
@@ -74,13 +87,15 @@ function Lobby({name, isAdmin, remotePeerId}){
             return;
 
         const conn = peerIns.current.connect(remotePeerId, {label:name});
-        console.log(`connect peer ${conn}`);
         adminIns.current = conn;
 
         conn.on('open', () => {
             conn.send({type: "msg", sender: name, text: `${name}님 입장!`});
 
             conn.on('data', data => {
+                console.log('received data');
+                console.log(data);
+
                 switch(data.type){
                     case 'msg':
                         setMessages(prevMsgs => [...prevMsgs, {sender: data.sender, text: data.text}]);
@@ -98,10 +113,6 @@ function Lobby({name, isAdmin, remotePeerId}){
         })
         
     }
-
-    // useEffect(() => {
-    //     console.log(playersData);
-    // }, [playersData]);
 
     const sendMsg = () => {
       if(!message.trim())
@@ -128,6 +139,13 @@ function Lobby({name, isAdmin, remotePeerId}){
             adminIns.current.send({type:'ready', sender: name});
         }
     }
+
+    const gameStart = () => {
+        if(!allReady)
+            return;
+
+        sendData({name: name, pos: "game", isAdmin: isAdmin});
+    }
   
     return (
       <div className='app'>
@@ -139,7 +157,6 @@ function Lobby({name, isAdmin, remotePeerId}){
         <h2>참여 인원</h2>
         <div>
             {playersData.current ? playersData.current.map((e)=>{
-                console.log(e);
                 return <div>{e.name}{!e.isAdmin ? e.isReady ? ", Ready": ", Not Ready" : null}</div>
             }): null}
         </div>
@@ -159,7 +176,8 @@ function Lobby({name, isAdmin, remotePeerId}){
         />
         <button onClick={sendMsg}>Send</button>
         {!adminIns.current || !adminIns.current.open ? <button onClick={connectPeer}>connect test</button> : null}
-        <button onClick={sendReady} style={{color: ready ? "Green" : "Red"}}>{ready ? "Ready" : "Not Ready"}</button>
+        {!isAdmin ? <button onClick={sendReady} style={{color: ready ? "Green" : "Red"}}>{ready ? "Ready" : "Not Ready"}</button> : null}
+        {isAdmin ? <button onClick={gameStart} style={{color: allReady ? "Green" : "Red"}}>Game Start</button>: null}
       </div>
     )
 }
