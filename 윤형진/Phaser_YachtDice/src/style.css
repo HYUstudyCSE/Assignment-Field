@@ -1,0 +1,56 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-board {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  height: 80%;
+}
+
+.rolled-area, .hold-area, .score-board {
+  border: 2px solid black;
+}
+
+.rolled-area, .hold-area {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+  background-color: #f00; /* Red for rolled area, Green for hold area */
+}
+
+.hold-area {
+  background-color: #0f0;
+}
+
+.score-board {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.score-board table {
+  width: 100%;
+}
+
+.roll-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}

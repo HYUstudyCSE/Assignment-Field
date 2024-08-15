@@ -1,0 +1,25 @@
+/* App.css */
+.App {
+  text-align: center;
+}
+
+.phaser-container {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 화면 전체 높이를 사용 */
+  width: 100vw; /* 화면 전체 너비를 사용 */
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1280px;
+  height: 720px;
+  border: 1px solid #002055;
+  margin: 0 auto;
+  box-shadow: 0 0 20px 20px rgba(0, 32, 85, 1); /* spread-radius 추가 */
+  background: rgba(0, 64, 170, 0.1); /* 약간의 투명한 배경색 추가 */
+}
