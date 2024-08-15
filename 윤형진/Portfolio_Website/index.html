@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윤형진</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        #header {
+            display: block;
+            top: 0;
+            margin: 0;
+            width: 100%;
+            background-color: black;
+            padding-bottom: 100px;
+        }
+        .header_c {
+            display: block;
+            margin: 0 auto;
+            max-width: 71.25rem;
+        }
+        .header_i {
+            display: block;
+            margin: 100px auto auto;
+            max-width: 71.25rem;
+
+        }
+        .header_content {
+            display: flex;
+            padding: 1.25rem 2rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #header_title {
+            display: inline-block;
+            font-family: "Black Han Sans", sans-serif;
+            font-size: 24px;
+            color: white;
+        }
+        .nav_sections {
+            float: right;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .nav_sections li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .nav_sections a {
+            text-decoration: none;
+            font-family: "Noto Sans KR", sans-serif;
+            padding: 10px 15px;
+            color: white;
+
+        }
+        .nav_sections > li > a:hover {
+            background-color: rgb(118, 236, 118);
+            border-radius: 50% 0;
+        }
+
+        .header_intro {
+            padding: 1.25rem 2rem;
+
+        }
+
+        .intro_title {
+            font-size: 4rem;
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            color: white;
+            font-style: normal;
+            word-break: keep-all;
+            text-align: end;
+        }
+        #animatedText {
+            text-align: end;
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: 1.2rem;
+            color: white;
+        }
+        .body_content {
+            display: block;
+            margin: 0 auto;
+            max-width: 71.25rem;
+            padding: 4rem 2rem;
+            
+        }
+
+        .titles{
+            font-family: "Black Han Sans", sans-serif;
+            font-size: 3rem;      
+            text-align: center;
+            margin: 0 auto;  
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .card_container {
+            display: flex;
+            margin-top:80px;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .card {
+            display: inline-block;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            flex: 1;
+            margin-inline: 20px;
+            padding: 32px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .card .icon {
+            display: flex;
+            align-items: center;
+            align-self: center;
+            justify-content: center;
+            margin-top: -60px;
+            margin-inline: auto;
+            width: 60px;
+            height: 60px;
+            font-size: 2em;
+            margin-bottom: 10px;
+            background-color: white;
+            border-radius: 40px;
+            border: solid #ddd;
+            border-width: 2px;
+        }
+        .card .content {
+            margin: 10px 0 0 0;
+            color: #333;
+            font-family: "Noto Sans KR", sans-serif;
+            font-style: italic;
+        }
+        .card .content .subt{
+            color: black;
+            font-size: 20px;
+            font-weight: 700;
+            font-style: normal;
+        }
+        #skills{
+            background-color: black;
+            color: white;
+        }
+        #stacks{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 80px auto 30px auto;
+        }
+        #stacks ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .stacks_list {
+            width: 45%;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            list-style-type: none;
+            position: relative;
+        }
+
+        .stacks_div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .stacks_list h1{
+            margin-top: 0;
+            width: 100%;
+        }
+
+        .stacks_list::before{
+            content: "";
+            position: absolute;
+            left: -1.5em;
+            top: 0.5em;
+            width: 0.35em;
+            height: 2em;
+            background-color: white;
+        }
+
+        .stack_card{
+            background-color: #000;
+            text-align: center;
+            width: 45%;
+            margin: 10px 5px 10px 5px;
+            padding: 5px;
+            border: solid 1px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
+            color: white;
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+        .project_card {
+            background-color: white;
+            border-radius: 10px;
+            border: solid 1px #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: "Noto Sans KR", sans-serif;
+            margin-top: 80px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            max-width: 980px;
+            margin: 80px auto;
+        }
+
+        .project_card h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin: 0;
+            color: #333;
+        }
+
+        .project_date {
+            font-size: 1rem;
+            text-align: center;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .project_content {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .project_content img {
+            max-width: 40%;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+
+        .project_description {
+            flex: 1;
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .project_card .project_features {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="header_c">
+            <div class="header_content">
+                <div id="header_title">YHJ's Portfolio</div>
+                <ul class="nav_sections">
+                    <li>
+                        <a href="#about">About me</a>
+                    </li>
+                    <li>
+                        <a href="#skills">Skills</a>
+                    </li>
+                    <li>
+                        <a href="#projects">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header_i">
+            <div class="header_intro">
+                <div class="intro_title">
+                    윤형진<br>개발자 포트폴리오
+                </div>
+                <hr>
+                <div id="animatedText">20살 개발자입니다.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="body">
+        <div id="about">
+            <div class="about_content body_content">
+                <h1 class="titles">ABOUT ME</h1>
+                <div class="card_container">
+                    <div class="card">
+                        <div class="icon"><i class="fas fa-user"></i></div>
+                        <div class="content"><span class="subt">이름</span><br><br> 윤형진</div>
+                    </div>
+                    <div class="card">
+                        <div class="icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="content"><span class="subt">생년월일</span><br><br> 2005-10-18</div>
+                    </div>
+                    <div class="card">
+                        <div class="icon"><i class="fas fa-pencil-alt"></i></div>
+                        <div class="content"><span class="subt">학력</span><br><br> 한양대학교 컴퓨터소프트웨어학부</div>
+                    </div>
+                </div>
+                <div class="card_container">
+                    <div class="card">
+                        <div class="icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="content"><span class="subt">경력</span><br><br> 2021 ~</div>
+                    </div>
+                    <div class="card">
+                        <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="content"><span class="subt">전화번호</span><br><br> 010-5527-0415</div>
+                    </div>
+                    <div class="card">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <div class="content"><span class="subt">이메일</span><br><br> younhj1018@gmail.com</div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <div id="skills">
+            <div class="skills_content body_content">
+                <h1 class="titles">My Skills</h1>
+                <div id="stacks">
+                    <ul>
+                        <li class="stacks_list">
+                            <div class="stacks_div">
+                                <h1>Web (Frontend & Backend)</h1>
+                                <div class="stack_card">HTML5</div>
+                                <div class="stack_card">Javascript</div>
+                                <div class="stack_card">CSS</div>
+                                <div class="stack_card">Flask</div>
+                                <div class="stack_card">Django</div>
+                            </div>
+                        </li>
+                        <li class="stacks_list">
+                            <div class="stacks_div">
+                                <h1>Languages</h1>
+                                <div class="stack_card">C</div>
+                                <div class="stack_card">C++</div>
+                                <div class="stack_card">Python</div>
+                                <div class="stack_card">Java</div>
+                            </div>
+                        </li>
+                        <li class="stacks_list">
+                            <div class="stacks_div">
+                                <h1>AI Libraries</h1>
+                                <div class="stack_card">TensorFlow</div>
+                                <div class="stack_card">PyTorch</div>
+                                <div class="stack_card">Keras</div>
+                                <div class="stack_card">Scikit-learn</div>
+                            </div>
+                        </li>
+                        <li class="stacks_list">
+                            <div class="stacks_div">
+                                <h1>Version Control</h1>
+                                <div class="stack_card">Git</div>
+                                <div class="stack_card">GitHub</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="projects">
+            <div class="projects_content body_content">
+                <h1 class="titles">PROJECTS</h1>
+                <div class="project_card">
+                    <h1>유전 알고리즘을 이용한 호실 배정</h1>
+                    <div class="project_date">2022.04 ~ 2022.11</div>
+                    <div class="project content">
+                        <img src="" alt="">
+                        <div class="project_description">상세한 설명</div>
+                    </div>
+                </div>
+                <div class="project_card"></div>
+                <div class="project_card"></div>
+                <div class="project_card"></div>
+                <div class="project_card"></div>
+            </div>
+        </div>
+        <div id="contact">
+            <div class="contact_content body_content">
+
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script>
+        const textElement = document.getElementById('animatedText');
+        const baseText = "20살 개발자입니다. ";
+        const textArray = ["인공지능을 개발하는 것을 좋아합니다.", "웹페이지를 개발하는 것을 좋아합니다.", "게임하는 것을 좋아합니다."];
+        let arrayIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const erasingSpeed = 50;
+        const delayBetweenTexts = 2000;
+
+        function type() {
+            const currentText = textArray[arrayIndex];
+            if (!isDeleting && charIndex <= currentText.length) {
+                textElement.textContent = baseText + currentText.substring(0, charIndex);
+                charIndex++;
+                setTimeout(type, typingSpeed);
+            } else if (isDeleting && charIndex >= 0) {
+                textElement.textContent = baseText + currentText.substring(0, charIndex);
+                charIndex--;
+                setTimeout(type, erasingSpeed);
+            } else if (!isDeleting && charIndex > currentText.length) {
+                isDeleting = true;
+                setTimeout(type, delayBetweenTexts);
+            } else {
+                isDeleting = false;
+                arrayIndex = (arrayIndex + 1) % textArray.length;
+                charIndex = 0;
+                setTimeout(type, typingSpeed);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            type();
+        });
+    </script>
+</body>
+</html>

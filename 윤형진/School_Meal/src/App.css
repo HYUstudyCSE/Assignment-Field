@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #555;
+  margin-top: 20px;
+}
+
+p {
+  color: #777;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+.react-datepicker__day--selected {
+  background-color: #4CAF50 !important;
+  color: white !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: #4CAF50 !important;
+  color: white !important;
+}
