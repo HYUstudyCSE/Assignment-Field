@@ -22,6 +22,7 @@ function Lobby({name, isAdmin, remotePeerId, sendData}){
         peer.on('open', id => {
             setPeerId(id);
             console.log(`My peer id: ${peerId}`);
+            connectPeer();
         })
 
         peer.on('connection', conn => {
@@ -29,10 +30,9 @@ function Lobby({name, isAdmin, remotePeerId, sendData}){
 
             playersData.current = [...playersData.current, {conn: conn, name: conn.label, isReady: false, isAdmin: false}];
 
-            sendAll({type: 'playerData',data: playersData.current.map(e => ({...e, conn: null}))});//sendAll이 player쪽 conn 연결되지 않은 상태에서 보내지는 걸로 추정, setTimeout 사용
-            setTimeout(() => {sendAll({type: 'playerData',data: playersData.current.map(e => ({...e, conn: null}))});}, 1000);
-
-            console.log(playersData.current);
+            conn.on('open', () => {
+                sendAll({type: 'playerData',data: playersData.current.map(e => ({...e, conn: null}))});
+            });
 
             conn.on('data', data => {
                 console.log('recevied data');
@@ -46,6 +46,8 @@ function Lobby({name, isAdmin, remotePeerId, sendData}){
                     case 'ready':
                         playersData.current = playersData.current.map(e => ({...e, isReady: e.name===data.sender ? !e.isReady : e.isReady}));
                         sendAll({type: 'playerData',data: playersData.current.map(e => ({...e, conn: null}))});
+
+                        console.log('Ready received');
                         
                         let temp = true;
 
@@ -68,6 +70,11 @@ function Lobby({name, isAdmin, remotePeerId, sendData}){
         peer.on('error', (e)=>{console.log(`peer error occurred ${e}`);});
         return () => {peer.disconnect();};
     }, []);
+
+    useEffect(() => {
+        isAdmin && sendAll({type: 'playerData',data: playersData.current.map(e => ({...e, conn: null}))});
+        console.log('useEffect Act');
+    }, [playersData.current]);
   
     const sendAll = (data) => {
         console.log('sendAll act');

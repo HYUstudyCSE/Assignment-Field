@@ -201,6 +201,7 @@ function Game(){
         const buttonText = ['Aces', 'Deuces', 'Threes', 'Fours', 'Fives', 'Sixes', 'Choice', '4 of a Kind', 'Full House', 'S. Straight', 'L. Straight', 'Yacht'];
         this.scoreBoard.list.forEach((e, index) => {
           e.list[1].setText(buttonText[index]);
+          e.list[0].on('pointerdown', () => {recordScore(index, buttonEvent[index])});
         })
 
         //pointerdown event
@@ -218,10 +219,6 @@ function Game(){
           lStraight,
           yacht
         ];
-
-        this.scoreBoard.list.forEach((e, index) => {
-          e.list[0].on('pointerdown', () => {recordScore(index, buttonEvent[index])});
-        })
       }
       
 
