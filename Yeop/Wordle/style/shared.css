@@ -1,0 +1,24 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+div * {
+  display: inline;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  padding: 30px;
+  border: 3px solid;
+  border-color: black;
+  text-align: center;
+  font-size: large;
+}
