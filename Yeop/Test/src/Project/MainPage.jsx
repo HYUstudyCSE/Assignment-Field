@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { usePeer } from "./usePeer";
+import { usePeer } from "./usePeerMain";
 import { useNavigate } from "react-router-dom";
 
 export default function MainPage() {
